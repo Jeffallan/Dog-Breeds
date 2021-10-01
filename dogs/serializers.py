@@ -5,6 +5,7 @@ class DogSerializer(ModelSerializer):
     class Meta:
         model = Dog
         fields = "__all__"
+        #depth = 2
 
 class BreedSerializer(ModelSerializer):
     class Meta:

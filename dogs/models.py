@@ -23,7 +23,7 @@ class Breed(models.Model):
                                                validators=[MaxValueValidator(5), MinValueValidator(1)])
 
     def __stf__(self) -> str:
-        return self.name.title()
+        return self.name
 
 class Dog(models.Model):
 
@@ -41,4 +41,4 @@ class Dog(models.Model):
     favoritetoy = models.CharField(max_length=60, blank=True)
 
     def __str__(self) -> str:
-        return self.name.title()
+        return self.name
