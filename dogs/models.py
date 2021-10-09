@@ -22,7 +22,7 @@ class Breed(models.Model):
     exerciseneeds = models.PositiveIntegerField(default=1,
                                                validators=[MaxValueValidator(5), MinValueValidator(1)])
 
-    def __stf__(self) -> str:
+    def __str__(self) -> str:
         return self.name
 
 class Dog(models.Model):
