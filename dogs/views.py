@@ -1,21 +1,14 @@
 from django.shortcuts import render
 from .models import Dog, Breed
 from .serializers import BreedSerializer, DogSerializer
-from rest_framework import generics, serializers
+from rest_framework import viewsets
 
-class DogList(generics.ListCreateAPIView):
+
+class DogViewset(viewsets.ModelViewSet):
     queryset = Dog.objects.all()
     serializer_class = DogSerializer
 
-class DogDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Dog.objects.all()
-    serializer_class = DogSerializer
 
-class BreedList(generics.ListCreateAPIView):
+class BreedViewset(viewsets.ModelViewSet):
     queryset = Breed.objects.all()
     serializer_class = BreedSerializer
-
-class BreedDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Breed.objects.all()
-    serializer_class = BreedSerializer
-
